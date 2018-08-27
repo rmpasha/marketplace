@@ -1,0 +1,50 @@
+<h4 class="mt-2">
+    {{title}} for {{storeName}}
+  </h4>
+  <div class="mb-3">
+      <button (click)="goBack()" class="btn btn-secondary btn-sm" id="button-addon2">
+        < Back</button>
+    </div>
+  <h6 class="mt-3">
+    {{subTitle}} : {{fundAvailable}} ether
+  </h6>
+<br/>
+  <form #Form="ngForm" (ngSubmit)="withdrawFund();Form.reset()">
+      <div class="input-group mb-3">
+        <input type="number" #amountFund="ngModel" min="1" max="10" name="amount" class="form-control" required [(ngModel)]="amount" placeholder="Withdrawal Amount"
+          aria-label="Withdraw Amount" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button [disabled]="!Form.form.valid" class="btn btn-secondary" type="submit" id="button-addon2">Withdraw</button>
+        </div>
+      </div>
+      <div *ngIf="amountFund.invalid && (amountFund.dirty || amountFund.touched)" class="alert alert-danger">
+        <div *ngIf="amountFund.errors.required">
+            Amount is required.
+        </div>
+      </div>
+    </form>
+    
+
+  
+  <!-- <form #Form="ngForm" (ngSubmit)="addStoreFront();Form.reset()">
+    <div class="input-group mb-3">
+      <input type="text" #name="ngModel" name="name" class="form-control" required [(ngModel)]="storeFront.name" placeholder="Store Front Name"
+        aria-label="Store Front Name" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button [disabled]="!Form.form.valid" class="btn btn-secondary" type="submit" id="button-addon2">Add</button>
+      </div>
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+    </div>
+  </form>
+  
+  <h6 class="mt-3">{{subTitle}}</h6>
+  <ul class="list-group list-group-flush mt-3">
+    <li *ngFor="let store of storeFronts; let i = index" class="list-group-item  d-flex justify-content-between align-items-center">
+      <span class="badge">{{i+1}}</span> {{store.name}}
+      <a routerLink="/storeFrontDetails" [queryParams]="{id:store.id}" class="btn-sm btn btn-secondary">Manage</a>
+    </li>
+  </ul> -->

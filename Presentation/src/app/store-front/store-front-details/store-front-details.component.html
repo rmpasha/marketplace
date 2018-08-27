@@ -1,0 +1,65 @@
+<!-- <p>store front details</p> -->
+<h4 class="mt-2">
+{{frontName}}:&nbsp;{{title}}
+</h4>
+
+<!-- <h6 class="mt-3">
+  {{subTitle1}}
+</h6> -->
+<!-- 
+<form #Form="ngForm" (ngSubmit)="addProduct();Form.reset()">
+  <div class="input-group mb-3">
+    <input type="text" #name="ngModel" name="name" class="form-control" required [(ngModel)]="product.name" placeholder="Product Name"
+      aria-label="Product Name" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button [disabled]="!Form.form.valid" [queryParams]="{name:product.name,sid:storeFrontId}" routerLink="/newProduct" class="btn btn-secondary"
+        type="button" id="button-addon2">Create</button>
+    </div>
+  </div>
+  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+    <div *ngIf="name.errors.required">
+      Name is required.
+    </div>
+  </div>
+</form> -->
+
+<!-- <h6 class="mt-3">{{subTitle}}</h6> -->
+<div class="text-right"><a (click)="goBack()" class="btn-sm btn btn-secondary">Back to store fronts</a></div>
+<div class="row">
+  <div class="col-md-4 mt-5" *ngFor="let prod of products; let i = index">
+      <!-- <img src="{{product.imageUrl}}" width="100px" class="img-fluid"> -->
+    <div class="card" >
+      <img class="card-img-top" src="{{prod.imageUrl}}" alt="{{prod.name}}" width="80px">
+      <!-- <img class="card-img-top" src="/src/images/gold-necklace-5000.jpg" alt="Card image cap"> -->
+      <div class="card-body">
+        <strong class="card-title">{{prod.name}}</strong>
+        <p class="card-text">{{prod.description}} <br/>
+        Price: {{prod.price}} ether <br/>
+        <!-- Qty available: {{prod.quantity}} <br/> -->
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a [queryParams]="{sid:storeOwner,fid:prod.frontId,pid:prod.id,fname:frontName,pname:prod.name,desc:prod.description,price:prod.price,qtyAvail:prod.quantity,pic:prod.imageUrl}" routerLink="/productDetails" class="btn-sm btn btn-secondary">Order</a>
+          </div>
+        <!-- <a href="#" class="btn btn-primary">Details</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ul class="list-group list-group-flush mt-3">
+  <li class="list-group-item  d-flex justify-content-between align-items-center">
+    <span class="text-left badge">SN</span>
+    <span class="text-left">Name</span>
+    <span class="text-left">Qty</span>
+    <span class="text-left">Price (Eth)</span>
+    <span class="text-left"></span>
+  </li>
+  <li *ngFor="let prod of products; let i = index" class="list-group-item  d-flex justify-content-between align-items-center">
+    <span class="badge">{{i+1}}</span>
+    <span>{{prod.name}}</span>
+    <span>{{prod.quantity}}</span>
+    <span>{{prod.price}}</span>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <a [queryParams]="{id:prod.id,storeFront:storeFrontId}" routerLink="/productDetails" class="btn-sm btn btn-secondary">Details</a>
+    </div>
+   </li>
+</ul> -->

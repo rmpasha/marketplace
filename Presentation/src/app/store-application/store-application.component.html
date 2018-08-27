@@ -1,0 +1,31 @@
+<h4 class="mt-2">
+  Welcome to {{title}} !
+</h4>
+
+<!-- <div class="btn-group mt-3" role="group" aria-label="Basic example">
+    <button type="button" (click) = "getApprovedStores()" class="btn btn-secondary">Approved</button>
+    <button type="button" (click) = "getUnapprovedStores()" class="btn btn-secondary">UnApproved</button>
+    <a routerLink="/add-store"  class="btn btn-secondary">Add Store</a>
+    <a routerLink="/manage-store" class="btn btn-secondary">Manage Store</a>
+ </div> -->
+ 
+<h6 class="mt-3">
+  {{subTitle1}}
+</h6>
+
+<form #Form="ngForm" (ngSubmit)="addStore();Form.reset()"> 
+  <div class="input-group mb-3" >
+    <!-- <input type="text" #name="ngModel" name="name" class="form-control" required [(ngModel)]="admin.name" placeholder="Admin Name" aria-label="Admin Name" -->
+    <input type="text" #name="ngModel" name="name" class="form-control" required [(ngModel)]="store.name" placeholder="Store Name" aria-label="Store Name"
+      aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button [disabled]="!Form.form.valid" class="btn btn-secondary" type="submit" id="button-addon2">Add</button>
+    </div>
+  </div>
+  <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+    <div *ngIf="name.errors.required">
+       Store name is required
+    </div>
+  </div>
+</form>

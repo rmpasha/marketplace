@@ -1,0 +1,21 @@
+<h4 class="mt-2">
+  Welcome {{title}} !
+</h4>
+ <h6 class="mt-3">{{unApproveTitle}}</h6>
+  <ul class="list-group list-group-flush mt-3">
+      <li *ngFor="let owner of unapprovedStores; let i = index" class="list-group-item  d-flex justify-content-between align-items-center">
+      <span class="badge">{{i+1}}</span> <span>{{owner.name}}</span><span> {{owner.address}}</span>
+      <button type="button" (click)="approveOwner(owner.address)" class="btn btn-secondary btn-sm">Approve</button>
+    </li>
+  </ul>
+  <br/><br/>
+<h6 class="mt-3">{{approveTitle}}</h6>
+<ul class="list-group list-group-flush mt-3">
+    <li *ngFor="let owner of approvedStores; let i = index" class="list-group-item  d-flex justify-content-between align-items-center">
+    <span class="badge">{{i+1}}</span> <span>{{owner.name}}</span><span> {{owner.address}}</span>
+  </li>
+</ul>
+
+
+
+

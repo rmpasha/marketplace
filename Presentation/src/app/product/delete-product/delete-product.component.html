@@ -1,0 +1,54 @@
+<h3 class="mt-2">
+    <h2> {{title}} !</h2>
+  </h3>
+  
+      <h4 class="mt-2"> {{subTitle}} </h4>
+ 
+  <!-- <div class="mb-3">
+    <button (click)="goBack()" class="btn btn-secondary btn-sm" id="button-addon2">< Back</button>
+  </div>
+   -->
+  <div class="card border-light" >
+    <div class="row">
+      <aside class="col-sm-5" style="padding-right:0px;">
+        <article class="gallery-wrap">
+          <div class="img-big-wrap">
+                <img class="img-fluid rounded mx-auto d-block mt-5" src="https://via.placeholder.com/286x180?text={{product.name}} image">
+          </div>
+  
+        </article>
+        <!-- gallery-wrap .end// -->
+      </aside>
+      <aside class="col-sm-7">
+        <article class="card-body p-5">
+          <h3 class="title mb-3">{{product.name}}</h3>
+  
+          <p class="price-detail-wrap">
+            <span class="price h3 text-warning">
+              <span class="currency">US $</span>
+              <span class="num">{{product.price}}</span>
+            </span>
+          </p>
+          <!-- price-detail-wrap .// -->
+          <dl class="item-property">
+            <dt>Description</dt>
+            <dd>
+              <p>{{product.description}}</p>
+            </dd>
+          </dl>
+          
+       </article>
+        <!-- card-body.// -->
+      </aside>
+   
+      <!-- col.// -->
+      <div class="text-center mt-5">
+          <form #Form="ngForm" (ngSubmit)="deleteProduct();Form.reset()">
+            <button (click)="goBack()" class="btn btn-secondary mr-3" type="button" id="button-addon2">Cancel</button>
+            <button [disabled]="!Form.form.valid" class="btn btn-secondary" type="submit" id="button-addon2">Delete</button>
+          </form>
+      </div>
+    </div>
+    <!-- row.// -->
+  </div>
+  <!-- card.// -->

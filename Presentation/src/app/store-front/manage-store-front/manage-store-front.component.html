@@ -1,0 +1,48 @@
+<h4 class="mt-2">
+    Manage {{title}} !
+  </h4>
+  <div class="text-left">    
+      <button (click)="goBack()" class="btn btn-secondary mr-3" type="button" id="button-addon2">< Back to Front list</button>
+    </div>
+  <h5 class="mt-3">
+    {{subTitle1}}
+  </h5>
+  <form #Form="ngForm" (ngSubmit)="addProduct();Form.reset()">
+    <div class="input-group mb-3">
+      <input type="text" #name="ngModel" name="name" class="form-control" required [(ngModel)]="product.name" placeholder="Product Name"
+        aria-label="Product Name" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button [disabled]="!Form.form.valid" [queryParams]="{ac:storeOwner,fid:frontId,fname:fname,name:product.name}" routerLink="/newProduct" class="btn btn-secondary"
+          type="button" id="button-addon2">Create</button>
+      </div>
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Product Name is required.
+      </div>
+    </div>
+  </form>
+  <h6 class="mt-3">{{subTitle}}</h6>
+  <ul class="list-group list-group-flush mt-3">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+      <!-- <span class="text-left badge">SN</span> -->
+      <span class="text-left">SN</span>
+      <span class="text-left">Product Name</span>
+      <span class="text-left">Price (ether)</span>
+      <span class="text-left">Quantity</span>
+      <span class="text-left"></span>
+    </li>
+    <li *ngFor="let prod of products; let i = index" class="list-group-item  d-flex justify-content-between align-items-center">
+      <!-- <span class="badge">{{i+1}}</span> -->
+      <span>{{i+1}}</span>
+      <span>{{prod.name}}</span>
+      <span>{{prod.price}}</span>
+      <span>{{prod.quantity}}</span>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a [queryParams]="{ac:storeOwner,fid:frontId,fname:fname,pid:prod.id}" routerLink="/editProduct" class="btn-sm btn btn-secondary">&nbsp;Edit&nbsp;</a> 
+        <!-- <a [queryParams]="{ac:storeOwner,fid:frontId,fname:fname,pid:prod.id}" routerLink="/deleteProduct" class="btn-sm btn btn-secondary">&nbsp;Delete&nbsp;</a> -->
+        <a (click)="deleteProduct(prod.id)" class="btn-sm btn btn-secondary">&nbsp;Delete&nbsp;</a>
+      </div>
+      <!-- <a [queryParams]="{id:prod.id,storeFront:storeFrontId}" routerLink="/productDetails" class="btn-sm btn btn-secondary">Details</a> -->
+    </li>
+  </ul>

@@ -1,0 +1,74 @@
+
+<h4 class="mt-2">
+     {{title}} !
+  </h4>
+  <h6 class="mt-3">
+      {{subTitle}}
+    </h6>
+<form #Form="ngForm" (ngSubmit)="addProduct();Form.reset()">
+  <fieldset>
+    <div class="col-lg-12 form-group margin50">
+      <label class="" for="Name">Name *</label>
+      <div class="">
+        <input type="text" #name="ngModel" required [(ngModel)]="product.name" id="name" name="Name" placeholder="" class="form-control name">
+      </div>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class=" col-lg-12 form-group">
+      <label class="" for="description">Description</label>
+      <div class="">
+        <input type="text" #description="ngModel"  [(ngModel)]="product.description" id="description" name="description" placeholder="" class="form-control name">
+      </div>
+    </div>
+    <div class="col-lg-12 form-group">
+      <label class="" for="price">Price (ether)*</label>
+      <div class="">
+        <input type="text" #price="ngModel" min required [(ngModel)]="product.price" id="price" name="price" placeholder="" class="form-control price">
+      </div>
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+        <div *ngIf="price.errors.required">
+          Price is required.
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 form-group">
+      <label class="" for="quantity">Quantity *</label>
+      <div class="">
+        <input type="text" #quantity="ngModel" required [(ngModel)]="product.quantity" id="quantity" name="quantity" placeholder="" class="form-control name">
+      </div>
+      <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="alert alert-danger">
+        <div *ngIf="quantity.errors.required">
+          Quantity is required.
+        </div>
+      </div>
+    </div>
+    Chose picture to upload in IPFS:&nbsp; <input type="file" value="Upload Image" (change)="onFileChanged($event)"><br/>
+    <i class="">(It might take few second to minutes. Please wait until the picture shows up below)</i>
+    <div class="clearfix"></div>
+    <img src="{{product.imageUrl}}" width="100px" class="img-fluid">
+    <label>Image saved at: {{product.imageUrl}}</label>
+    <div class="clearfix"></div><br/>
+    <button [disabled]="!Form.form.valid || loading" class="btn btn-secondary" type="submit" id="button-addon2">Add New Product</button>&nbsp;&nbsp;
+    <button (click)="goBack()" class="btn btn-secondary mr-3" type="button" id="button-addon2">Back to Product List</button>
+
+   
+
+    <!-- <div class="col-lg-12 form-group">
+      <label class="" for="Distributor">Image Url</label>
+      <div class="">
+        <input type="text" id="image" name="image" placeholder="" class="form-control name">
+      </div>
+      <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">
+        <div *ngIf="image.errors.required">
+          Name is required.
+        </div>
+      </div>
+    </div> -->
+
+  </fieldset>
+</form>

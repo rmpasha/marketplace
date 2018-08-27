@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <h2 class="mt-2"><a class="navbar-brand" href="#">{{title}}</a></h2>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item " [hidden]="!(userRole === userRoles.ContractOwner)">
+          <a class="nav-link">Contract Owner <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" [hidden]="!(userRole === userRoles.Administrator)">
+          <a class="nav-link">Administrator</a>
+        </li>
+        <li class="nav-item" [hidden]="!(userRole === userRoles.StoreOwner)">
+          <a class="nav-link">Store Owner</a>
+        </li>
+        <li class="nav-item" [hidden]="!(userRole === userRoles.Shopper)">
+          <a class="nav-link" routerLink="/shopper">Shopper</a>
+        </li>
+        <li class="nav-item  active" [hidden]="!(userRole === userRoles.Shopper)">
+          <a class="nav-link" routerLink="/store-application">Store Application</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <!-- <dl class="">
+      <dt>Address</dt><dd>{{account}}</dd>
+      <dt>Balance</dt><dd>{{balance}}</dd>
+    </dl> -->
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row mt-4">
+        <div class="col-md">
+          <h6>Address</h6>
+          <div>{{account}}</div>
+        </div>
+        <div class="col-md">
+          <h6>Balance</h6>
+          <div>{{balance}}</div>
+        </div>
+      </div>
+      <hr>
+      <div class="mt-4">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <app-logging></app-logging>
+    </div>
+  </div>
+
+</div>

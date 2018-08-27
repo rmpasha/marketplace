@@ -1,0 +1,62 @@
+
+<h4 class="mt-2">
+    Welcome {{title}} !
+  </h4>
+  
+  <!-- <div>
+    <a class="btn btn-secondary float-right btn-sm" routerLink="/withdrawFund" [queryParams]="{id:address}">Withdraw Fund</a>
+  </div> -->
+
+  <div class="clearfix"></div>
+
+  <!-- <h6 class="mt-3">
+    {{subTitle1}}
+  </h6>
+   -->
+  <!-- <form #Form="ngForm" (ngSubmit)="addStoreFront();Form.reset()">
+    <div class="input-group mb-3">
+      <input type="text" #name="ngModel" name="name" class="form-control" required [(ngModel)]="storeFront.name" placeholder="Store Front Name"
+        aria-label="Store Front Name" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button [disabled]="!Form.form.valid" class="btn btn-secondary" type="submit" id="button-addon2">Add</button>
+      </div>
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+    </div>
+  </form> -->
+  
+  <h6 class="mt-3">{{subTitle}}</h6>
+  <ul class="list-group list-group-flush mt-3">
+    <li *ngFor="let front of storeFronts; let i = index" class="list-group-item  d-flex justify-content-between align-items-center">
+      <span class="badge">{{i+1}}</span> {{front.name}}
+      <a routerLink="/storeFrontDetails" [queryParams]="{fid:front.id,fname:front.name,sid:front.owner}" class="btn-sm btn btn-secondary">Products in Sale</a>
+    </li>
+  </ul>
+
+
+
+<!-- <h1>
+  Welcome Shopper!
+</h1>
+
+<ul>
+  <li>browse all of the storefronts that have been created in the marketplace.</li>
+  <li>Clicking on a storefront will take them to a product page.
+    <h3>list of products</h3>
+    <ul>
+      <li>
+        price
+      </li>
+      <li>
+        quantity
+      </li>
+    </ul>
+  </li>
+  <li>purchase a product, which will debit their account
+      and send it to the store.</li>
+      <li>The quantity of the item in the store’s inventory will be reduced
+          by the appropriate amount.</li>
+</ul> -->
