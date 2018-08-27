@@ -450,7 +450,7 @@ contract('marketplace', function (accounts) {
             //amountToWithdraw = 5
             //First get previous balance of store owner
             var store1PreviousBalance = +web3.fromWei(web3.eth.getBalance(store1), 'ether');
-            console.log("Previous: " + store1PreviousBalance)
+            //console.log("Previous: " + store1PreviousBalance)
             return marketInstance.withdrawAmount(web3.toWei(amountToWithdraw), { from: store1 }).then(function (data) {
                 var store1CurrentBalance = +web3.fromWei(web3.eth.getBalance(store1), 'ether');
                 //console.log("current: " + store1CurrentBalance)
