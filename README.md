@@ -77,10 +77,12 @@ Save all contents of this terminal since we need the test address and mnemonic t
 
 ##### Project Setup for backend deployment and testing
 
+###### Please note that the frond end app is in sub folder called Presentation. Install npm under Presentation folder only.
+
 1.	Download or copy the files and folders of this project.
 2.	Give the root folder of this project name as marketplace if the downloaded folder name is different.
 3.	Open new terminal and change directory to marketplace.
-4.	Do not install npm install command here since this project front end app is in the sub folder called Presentation
+4.	Do not run 'npm install' command here since this project front end app is in the sub folder called Presentation
 5.	Run command truffle compile to see if all smart contract succeffully compiled.
 ```javascript
 truffle compile
