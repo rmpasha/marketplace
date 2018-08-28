@@ -341,9 +341,11 @@ In the emergency case and if owner need to kill the smart contract, there should
 
 
 ### Front-End manual testing/User tutorial
-I have created separate document for front-end manual testing. Please refer the file from \marketplace\documents\Frontend manual testing.pdf or click simply go here https://github.com/rmpasha/rajmahar_mp1/blob/master/marketplace/documents/Frontend%20manual%20testing.pdf
+I have created separate document for front-end manual testing. This give users for full testing and kind of tutorial with all access. Please refer the file from \marketplace\documents\Frontend manual testing.pdf or click simply go here <a href="documents/Frontend manual testing.pdf">Front-end manual testing / User tutorial</a> 
+
 
 ### Quick screen shots of front-end for quick understanding
+
 
 ##### 1. Contract Owner adds admin
 
