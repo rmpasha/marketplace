@@ -346,22 +346,31 @@ I have created separate document for front-end manual testing. This give users f
 
 ### Quick screen shots of front-end for quick understanding
 
+<hr>
 
 ##### 1. Contract Owner adds admin
 
 <img src="imagesForDocument/02 Contract Owner Add Admin.JPG" width="600">
 
+<hr>
+
 ##### 2. Registration page for store owner
 
 <img src="imagesForDocument/03 Store Application.JPG" width="600">
+
+<hr>
 
 ##### 3. Admin approves store
 
 <img src="imagesForDocument/05 admin Approve2.JPG" width="600">
 
+<hr>
+
 ##### 4. Store Owner adds store front
 
 <img src="imagesForDocument/07 store Fronts1.JPG" width="600">
+
+<hr>
 
 ##### 5. Store Owner adds product
 
@@ -369,17 +378,25 @@ I have created separate document for front-end manual testing. This give users f
 
 <img src="imagesForDocument/09 addProduct2.JPG" width="600">
 
+<hr>
+
 ##### 6. Store Owner edit product
 
 <img src="imagesForDocument/12 editProduct.JPG" width="600">
+
+<hr>
 
 ##### 7. Buyer order product
 
 <img src="imagesForDocument/13 user1.JPG" width="600">
 
+
 <img src="imagesForDocument/15 user3.JPG" width="600">
 
+
 <img src="imagesForDocument/16 user4.JPG" width="600">
+
+<hr>
 
 ##### 8. Store owner withdraws
 
