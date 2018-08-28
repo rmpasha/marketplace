@@ -395,14 +395,14 @@ contract. The code looks fine, it compiles fine from remix and from truffle as w
 
 
 ### Technologies used
-###### Ganache-cli
-###### Truffle framework
-###### OpenZeppelin-Solidity
-###### Web3
-###### ipfs-api
-###### Angular6
-###### Remix
-###### Visual Studio Code
+###### Ganache-cli              https://github.com/trufflesuite/ganache-cli
+###### Truffle framework        https://truffleframework.com/
+###### OpenZeppelin-Solidity    https://github.com/OpenZeppelin/openzeppelin-solidity
+###### Web3js                   https://github.com/ethereum/web3.js/
+###### ipfs-api                 https://github.com/ipfs/js-ipfs-api
+###### Angular6                 https://angular.io/
+###### Remix                    http://remix.ethereum.org/
+###### Visual Studio Code       https://code.visualstudio.com/
 
 
 ### Author
