@@ -1,6 +1,7 @@
 ## Avoiding_common _attacks
 
 ##### 1. Reentrancy
+
 In this smart contract, it is very possible to arise this issue while transferring amount from contract account to store owner. Initially, I had written the withdrawAmount method as below.
 
 ```javascript
@@ -30,6 +31,7 @@ function withdrawAmount(uint _amountToWithdraw) public onlyStoreOwner whenNotPau
 ```
 
 ##### 2. Cross-function Race Condition	
+
         - Not application
 
 ##### 3. Integer Overflow and Underflow
@@ -62,4 +64,5 @@ address(msg.sender).balance - _amountToWithdraw <= address(msg.sender).balance
 make sure for integer underflow.
 
 ##### 4. DoS with Block Gas Limit
+
 This smart contract doesn’t transfer to do payment by owner at all but store owner can withdraws their sales amount by themselves. So, there no bulk payment. This avoid the looping and avoid the Gas Limit problem. Again I have not written any code that goes in loop to get any records. The using of mappings and the count are the remedies for using array and loop.

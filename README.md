@@ -37,7 +37,9 @@ The participants are contract owner, admins, store owner and buyers. All have un
 ### How to setup to run this project in your local computer?
 
 There are many programs/tools/framework might need to install before run this web app. Here is the prerequisites you need to install if you don’t have already installed.
+
 ##### 1. NodeJs
+
 If your computer has just setup OS and nothing installed yet, you need to install NodeJS first. How it can be setup so that you get the latest or required version, please follow this github tutorial that I have written 3 months ago. https://github.com/rmpasha/eth-cert-assignments/blob/master/4%20Advanced%20Solidity.pdf 
 
 ##### 2. Ganache cli install. For details https://github.com/trufflesuite/ganache-cli
@@ -80,12 +82,24 @@ Save all contents of this terminal since we need the test address and mnemonic t
 3.	Open new terminal and change directory to marketplace.
 4.	Do not install npm install command here since this project front end app is in the sub folder called Presentation
 5.	Run command truffle compile to see if all smart contract succeffully compiled.
+```javascript
+truffle compile
+```  
 6.	Run command truffle test to test all testing code
+```javascript
+truffle test
+```  
 7.	Run command truffle migrate to deploy the smart contract.
+```javascript
+truffle migrate
+or
+truffle migrate --reset
+```  
 
 ##### Project setup for front-end and testing
 
 1.	Change directory to marketplace/Presentation in the terminal
+
 2.	Run command npm install to install all required dependencies in node_module folder
 ```javascript
 npm install
@@ -95,6 +109,9 @@ npm install
 install -g @angular/cli
 ```
 4.	Run command ng serve to start local web server
+```javascript
+ng serve
+```  
 5.	Open browser (chrome) and browse local url: http://localhost:4200 
 
 ### Smart contract details
@@ -142,141 +159,182 @@ This is last but not the least smart contract. It stores product details and ord
 There are 41 automated test codes for all smart contracts including OpenZeppelin copied smart contracts. I have not written at least 5 smart contracts for OpenZeppelin contracts since I think they are more secure and well tested already but still I have done few main testing for those contracts. The details of the testing are as below
 
 1.	Deploy the marketplace smart contract: 
+
 To catch the instance of smart contract deployment. Error if not successfully deployed.
 
 ##### Ownable.sol (OpenZeppelin)
 
 2.	Test for valid contract owner: 
+
 In truffle, by default the contract owner is first address from the 10 testing addresses. After contract deployment, the owner should return the first address.
 
 3.	Test for no other than contract owner can transfer ownership:
+
 If other than contract owner tries to transfer ownership, it should throw an error and never success.
 
-4.	Test for contract owner should be able to transfer ownership.
+4.	Test for contract owner should be able to transfer ownership:
+
 If contract owner transfer the ownership of the contract, it should be allowed.
 
 ##### Pausable.sol (OpenZeppelin)
 
 5.	Test whether owner can pause the contract or not: 
+
 The owner should have ability to pause the contract in emergency case. Also owner should be able to unpause.
 
 6.	Test for no other than contract owner can pause: 
+
 If other than contract owner tries to pause, it should throw an error and never success.
 
 7.	Test for no other than contract owner can unpause:
+
 If other than contract owner tries to unpause, it should throw an error and never success.
  	
 ##### admins_mp.sol
 
 8.	Test for contract owner should be able to add admin:
+
 Contract owner should be able to add new admin. 
 
 9.	Test for no other than contract owner, can add an admin:
+
 If other than contract owner tries to add new admin, it should throw an error and never get success.
 
 10.	Test for contract owner should be able to add more admin:
+
 Contract owner should be able to add more than one admins since there can be the group of admin who controls the web app.
 
 11.	Test for getAdmins(), it should return admins:
+
 It should return the group of admins those added by contract owner till now.
 
 12.	Test for duplicate admin should not be allowed:
+
 It should not be allowed to add duplicate admin account. It should just give the same previous admins count even tries to add duplicate admin.
 
 ##### stores_mp.sol
 
 13.	Test for anybody can register a new store:
+
 Anybody who wants to be a store owner and open a new store, should be able to register a store. 
 
 14.	Test for 2nd store registration:
+
 The web app should be allowed more than one store registration from different users.
 
 15.	Test for admin should be able to approve a new store:
+
 Without approve store from admin, it will be worthless. So, admin should be able to approve store owner.
 
 16.	Test for admin should be able to approve more than one store:
+
 There will be more than one store, so admin should be able to approve more than one store
 
 17.	Test for User Type return, Contract owner call should be returned 0:
+
 If the contract owner login this web app, the user type enum variable value should return 0. 0 means Contract Owner in enum variable.
 
 18.	Test for User Type return, admin call should be returned 1:
+
 User Type returned value 1 represents for admin. So, if admin calls getUserType method, it should return 1.
 
-19.	Test for User Type return, store owner call should be returned 2.
+19.	Test for User Type return, store owner call should be returned 2:
+
 User Type returned value 2 represents for store owner. So, if store owner calls this method, it should return 2.
 
 20.	Test for User Type return, user call should be returned 3:
+
 User Type returned value 3 represents for all other users. When anybody who are not a contract owner and not in admins and store owner groups, calls this method, it should return 3.
 
 ##### fronts_mp.sol
 
 21.	Test for store owner should be able to add new store front:
+
 Store owner should be able to add new store front.
 
 22.	Test for getFrontCountByOwner(), it should return a count of store fronts:
+
 This method should return number of store counts those added by store owner till now.
 
 23.	Test for getFrontCountByOwner(), it should return the count only of store owner that passed as parameter:
+
 It should return only the count those owns by particular store owner. Let’s say Store1 has 5 store fronts and Store2 has 3 store fronts. If Store1 passed as parameter, the method should return 5 only.
 
 24.	Test for getFrontDetailsByOwner(), it should return the Front name:
+
 Store owner address and front id use as the parameters for this method and it should return the front name according to the parameters.
 
 25.	Test for no other than store owner can add store front:
+
 If other than store owner tries to add new store front, it should throw an error and never get success.
 
 ##### marketplace.sol
 
 26.	Test for no other than store owner can add product:
+
 If other than store owner tries to add new product, it should throw an error and never get success.
 
 27.	Test for store owner should be able to add new product:
+
 Store owner should be able to add new product.
 
 28.	Test for many products adding by store owner:
+
 Store owner should be able to add multiple products and they should be able to add again and again.
 
 29.	Test for other store owner should be able to add a product:
+
 Since this application can have many store owners, all store owner should be able to add their products
 
 30.	Test for getProductCountByFront(), it should return the count of the products those linked with store front:
+
 Since there is a parent child relation between store front and the products, it should return only the count of products those linked with the parent store front.
 
 31.	Test getEachProductByOwner(), it should return the product row:
+
 Store owner, front id and product id are use as the parameter and it should return the product details accordingly.
 
 32.	Test for store owner should be able to update a product:
+
 Store owner should be able to change their product information like product name, description, price and quantity.
 
 33.	Test for store owner should be able to delete a product:
+
 Store owner should be able to delete a product anytime.
 
 34.	Test for user should be able to order a product:
+
 Any user should be able to order a product and there should not be any error.
 
 35.	Test for quantity available in inventory should be deducted:
+
 After order, quantity available in inventory should be deducted by ordered quantity.
 
 36.	Test for getOrdersBySeller() should give order details:
+
 Seller (store owner) calls this method. It should give the order details for particular order id.
 
 37.	Test for getOrderCountBySeller() should give total order by seller:
+
 It should return the count of the orders for particular seller.
 
 38.	Test for other user should be able to make an order.
+
 Not only one user but many other users also should able to order the products from different sellers.
 stores_mp.sol test for winthdraw cases
 
 39.	Test for store owner should be able to withdraw:
+
 Since all payments deposit to contract account, store owner should be able to withdraw their sales amount from contract account. This test case need web3.min.js in the root folder. If this file is not there, it will be failed since I am taking the balance of store owner using web3.
 
 40.	Test for no store owner can withdraw more than their sales amount:
+
 Store owner should be able to withdraw but no more than their sales amount. Since contract account will have all sellers sales amount deposited, store owner should be allowed to withdraw only their shares.
 
 ##### Ownable.sol for transfer all amount
 
 41.	Test for contract owner should be able to transfer all amount:
+
 In the emergency case and if owner need to kill the smart contract, there should be feature to get all contract account balance transferred in owner other personal account. This test make sure that it will work.
 
 
@@ -325,6 +383,7 @@ I have created separate document for front-end manual testing. Please refer the 
 
 
 ### Issue, Bugs and solidity limitations
+
 During the project work development, I found two main issues with smart contract.
 
 1. If I use more layer like users account and use inheritance, the products mappings give no error but never able to deploy the 

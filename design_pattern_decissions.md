@@ -53,6 +53,7 @@ Store owner can transfer only up to the total amount that they made it from thei
 require(store_owner_balances[msg.sender] >= _amountToWithdraw);
 ```
 ##### 9.	Auto Deprecation: 
+
 Not used because no needed.
 
 ##### 10.	Speed Bump: 
