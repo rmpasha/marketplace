@@ -232,6 +232,8 @@ contract marketplace is fronts_mp {
             require(products[_seller][_front_id][_product_id].seller == _seller);
             //make sure minimum order quantity is 1 or more
             require(_order_quantity >= 1);
+            //Order quantity should be greater or equal to availabe quantity
+            products[_seller][_front_id][_product_id].quantity >= _order_quantity;
             //make sure the user send the ether that is same the value of price x ordered quantity
             require(_unit_price * _order_quantity == msg.value);
             //insert order transaction

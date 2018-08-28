@@ -4,7 +4,7 @@ Online marketplace is a web application using solidity smart contract where stor
 
 All payments goes to the contract account. Store owner can withdraw their total amount of sales anytime.
 
-All information of all participants of this web application and order information are stored in the ethereum blockchain.
+All information of all participants of this web application, products information, store's inventory and order information are stored in the ethereum blockchain. The picture of the products store in ipfs network and display from ipfs network.
 
 Below screen shot is just for an idea before reading all details.
 
