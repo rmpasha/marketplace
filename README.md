@@ -393,8 +393,8 @@ contract. The code looks fine, it compiles fine from remix and from truffle as w
 
 2. In products information, I wanted to use more variables to store more information like order date, product category etc., but due to weired stack error, I removed extra fields. The error occurred when I use more than 14 to 16 fields in one method as parameters and returns. I mean, if the sum of total of number of parameters and total number of returning fields is more than 14, it gives stack error.
 
-##### Technologies used
 
+### Technologies used
 ###### Ganache-cli
 ###### Truffle framework
 ###### OpenZeppelin-Solidity
@@ -405,6 +405,6 @@ contract. The code looks fine, it compiles fine from remix and from truffle as w
 ###### Visual Studio Code
 
 
-#### Author
+### Author
 
 RAJENDRA MAHARJAN
