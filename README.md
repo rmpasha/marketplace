@@ -392,3 +392,19 @@ During the project work development, I found two main issues with smart contract
 contract. The code looks fine, it compiles fine from remix and from truffle as well but never get success. It always shows the max gas overflow no matter how much I use the gas. I even testes with 2000 million on remix which is not possible in my case since after removing those codes, it just comsume around 500K gas to deploy.
 
 2. In products information, I wanted to use more variables to store more information like order date, product category etc., but due to weired stack error, I removed extra fields. The error occurred when I use more than 14 to 16 fields in one method as parameters and returns. I mean, if the sum of total of number of parameters and total number of returning fields is more than 14, it gives stack error.
+
+##### Technologies used
+
+###### Ganache-cli
+###### Truffle framework
+###### OpenZeppelin-Solidity
+###### Web3
+###### ipfs-api
+###### Angular6
+###### Remix
+###### Visual Studio Code
+
+
+#### Author
+
+RAJENDRA MAHARJAN
