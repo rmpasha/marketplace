@@ -400,6 +400,7 @@ contract. The code looks fine, it compiles fine from remix and from truffle as w
 ###### OpenZeppelin-Solidity    https://github.com/OpenZeppelin/openzeppelin-solidity
 ###### Web3js                   https://github.com/ethereum/web3.js/
 ###### ipfs-api                 https://github.com/ipfs/js-ipfs-api
+###### MetaMask                 https://metamask.io/
 ###### Angular6                 https://angular.io/
 ###### Remix                    http://remix.ethereum.org/
 ###### Visual Studio Code       https://code.visualstudio.com/
