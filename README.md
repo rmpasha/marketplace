@@ -116,6 +116,28 @@ ng serve
 ```  
 5.	Open browser (chrome) and browse local url: http://localhost:4200 
 
+### Rinkeby test net deployment info
+I have also deployed the project contracts in Infura Rinkeby Test Net. Since this project has separate library other than Openzeppelin, there are two contracts. But you just need to connect Marketplace contract.
+
+Contract Owner (Deployer)
+0xfcd0f7fef2da3a6741920f711cfd1b8b720848d7
+
+##### Marketplace Contract (This is the main contract)
+
+https://rinkeby.etherscan.io/tx/0xbb36b026f827946b0e87b26e382342fc26148e8de6e70c8990f2135fcc322914
+
+##### Contract Address at
+
+##### 0x247bb34c3fcc76da3dc98d4a90daf0190320d01d 
+
+###### Library Contract : This contract is for library that used for this project other than OpenZeppelin libraries.
+
+https://rinkeby.etherscan.io/tx/0x3ca2c87868b828877881734abcff10639f6514fb7003f911449eb6f5fb431c2c
+
+###### Contract Address at:
+###### 0x11f852f45432cf3f69481a2b9da205183a56f3ff 
+
+
 ### Smart contract details
 
 It has 6 main smart contract, 2 library and 1 Migration.sol from truffle project. 2 smart contract and 1 library are copied from OpenZeppelin for re-use since they are more reliable, secure, and fully tested smart contracts and libraries.
