@@ -77,7 +77,7 @@ Save all contents of this terminal since we need the test address and mnemonic t
 
 ##### Project Setup for backend deployment and testing
 
-###### Please note that the frond end app is in sub folder called Presentation. Install npm under Presentation folder only.
+###### Please note that the front end app is in sub folder called Presentation. Install npm under Presentation folder only.
 
 1.	Download or copy the files and folders of this project.
 2.	Give the root folder of this project name as marketplace if the downloaded folder name is different.
