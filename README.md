@@ -152,7 +152,7 @@ This is a library file that I used from open zeppelin-solidity. It is specially 
 
 ##### B.	Library_mp.sol
 
-This is a library file that I created something for using shared method in many smart contracts. I has a method called IsEmptyString(param string) to check whether the parameter is empty or not. If empty it returns true and false otherwise.
+This is a library file that I created something for using shared method in many smart contracts. It has a method called IsEmptyString(param string) to check whether the parameter is empty or not. If empty it returns true and false otherwise.
 
 ##### C.	Ownable.sol
 
